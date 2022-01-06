@@ -110,7 +110,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                     child: PageView.builder(
                       itemCount: painScore.length,
                       scrollDirection: Axis.horizontal,
-                      controller: PageController(viewportFraction: 0.2),
+                      controller: PageController(viewportFraction: 0.16),
                       onPageChanged: (int index) {
                         onScoreChange(index);
                       },
@@ -126,7 +126,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                               style: TextStyle(
                                 color:
                                     index == score ? Colors.black : Colors.grey,
-                                fontSize: 20,
+                                fontSize: index == score ? 24 : 20,
+                                fontWeight: index == score ? FontWeight.w600 : FontWeight.w400
                               ),
                             ),
                             const SizedBox(
@@ -156,16 +157,16 @@ class _HomeWidgetState extends State<HomeWidget> {
                   child: Text(
                     message,
                     style: GoogleFonts.poppins(
-                      color: Colors.green,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600
-                    ),
+                        color: Colors.green,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600),
                   ),
                 ),
                 Container(
                   margin: EdgeInsets.only(
-                      bottom: 20,
-                      top: MediaQuery.of(context).size.height * 25 / 100),
+                    bottom: 20,
+                    top: MediaQuery.of(context).size.height * 25 / 100,
+                  ),
                   width: 320,
                   height: 50,
                   child: ElevatedButton(
