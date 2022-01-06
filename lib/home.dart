@@ -37,7 +37,9 @@ class _HomeWidgetState extends State<HomeWidget> {
         Container(
           width: double.infinity,
           height: 200,
-          decoration: BoxDecoration(color: HexColor('B7F2EC')),
+          decoration: BoxDecoration(
+            color: HexColor('B7F2EC'),
+          ),
           child: Padding(
             padding: const EdgeInsets.only(left: 30),
             child: Column(
@@ -101,7 +103,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                 const SizedBox(
                   height: 100,
                 ),
-                Expanded(
+                SizedBox(
+                  height: 110,
                   child: Padding(
                     padding: const EdgeInsets.only(right: 50),
                     child: PageView.builder(
@@ -139,13 +142,6 @@ class _HomeWidgetState extends State<HomeWidget> {
                             const SizedBox(
                               height: 10,
                             ),
-                            if (index == score)
-                              Text(
-                                message,
-                                style: GoogleFonts.poppins(
-                                  fontSize: 10,
-                                ),
-                              )
                           ],
                         ),
                       ),
@@ -153,9 +149,23 @@ class _HomeWidgetState extends State<HomeWidget> {
                   ),
                 ),
                 Container(
+                  alignment: Alignment.center,
                   margin: const EdgeInsets.only(
-                    bottom: 20,
+                    right: 30,
                   ),
+                  child: Text(
+                    message,
+                    style: GoogleFonts.poppins(
+                      color: Colors.green,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(
+                      bottom: 20,
+                      top: MediaQuery.of(context).size.height * 25 / 100),
                   width: 320,
                   height: 50,
                   child: ElevatedButton(
